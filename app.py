@@ -393,7 +393,7 @@ def render_chat():
             f'{ICON_BOT}'
             '<div>'
             '<h1>MathBot</h1>'
-            f'<p>Bonjour, {st.session_state.user_name} 👋</p>'
+            f'<p>Bonjour, {st.session_state.user_name} </p>'
             '</div>'
             '</div>'
         )
@@ -402,14 +402,14 @@ def render_chat():
         st.write("")
         c1, c2 = st.columns(2)
         with c1:
-            st.button("↺", key="restart_btn", help="Recommencer la conversation",
+            st.button("RESTART", key="restart_btn", help="Recommencer la conversation",
                        on_click=lambda: st.session_state.update(messages=[]))
         with c2:
-            st.button("⏻", key="logout_btn", help="Se déconnecter", on_click=logout)
+            st.button("EXIT", key="logout_btn", help="Se déconnecter", on_click=logout)
 
     # Message de bienvenue au premier affichage
     if not st.session_state.messages:
-        st.session_state.messages.append(("bot", "Salut ! Je suis MathBot 🧮. "
+        st.session_state.messages.append(("bot", "Salut ! Je suis MathBot . "
                                                     "Pose-moi une question sur l'algèbre, la géométrie, "
                                                     "les fractions ou tout autre sujet de mathématiques !",
                                            datetime.now().strftime("%H:%M")))
